@@ -7,12 +7,12 @@ jobs:
             -   name: Checkout
                 uses: actions/checkout@v2.4.0
             -   name: Dependencies
-                run: sudo apt-get install -y libmemcached-dev
+                run: sudo apt-get install -y librdkafka-dev
             -   name: Setup PHP
                 uses: shivammathur/setup-php@verbose
                 with:
                     php-version: '8.0'
                     coverage: none
-                    extensions: 'none, xml, igbinary, msgpack, memcached-3.1.4'
+                    extensions: 'none, xml, rdkafka-5.0.2'
                 env:
                     fail-fast: true
